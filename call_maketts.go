@@ -5,8 +5,9 @@ import (
 )
 
 //MakeTTS ...
-func (call *CallService) MakeTTS(receptor string, message string, params *CallParam) (Message, error) {
+func (call *CallService) MakeTTS(sender string, receptor string, message string, params *CallParam) (Message, error) {
 	v := structToURLValues(params)
+	v.Set("sender", sender)
 	v.Set("receptor", receptor)
 	v.Set("message", message)
 	return call.CreateMakeTTS(v)
