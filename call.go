@@ -8,6 +8,7 @@ import (
 type CallParam struct {
 	Date    time.Time
 	LocalID string
+	Sender	[]string
 }
 
 //CallService ...
